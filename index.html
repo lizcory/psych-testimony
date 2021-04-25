@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psych Testimony</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- style -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.5.0/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Psychologist testimony in Congress 1946 - 2016</h1>
+        <h3 id = "byline">by Liz Cory</h3>
+        <p>
+            Testimony by psychologists in the United States Congress. Insert info re: history of expert testimony, psychologists as witnesses...
+        </p>
+
+        <div class="chart-1">
+            <svg id="bar-chart"></svg>
+        </div>
+
+
+        <div id="annotation-container">
+            <div class="annotation" data-decade= '1940s 1950s 1960s 1970s 1980s 1990s 2000s 2010s' id="id-0">
+                <div class="box">
+                    <div class="title">OVERVIEW</div>
+                    <div class="text">Insert text.</div>
+                </div>
+            </div>
+        
+            
+            <div class="annotation" data-decade="1940s" id="id-1">
+                <div class="box">
+                    <div class="title">1940s</div>
+                    <div class="text">Insert text.</div>
+                </div>
+            </div>
+
+            <div class="annotation" data-decade="1950s" id="id-2">
+                <div class="box">
+                    <div class="title">1950s</div>
+                    <div class="text">Insert text.</div>
+                </div>
+            </div>
+
+            <div class="annotation" data-decade="1960s" id="id-3">
+                <div class="box">
+                    <div class="title">1960s</div>
+                    <div class="text">Insert text.</div>
+                </div>
+            </div>
+
+            <div class="annotation" data-decade="1970s" id="id-4">
+                <div class="box">
+                    <div class="title">1970s</div>
+                    <div class="text">Insert text.</div>
+                </div>
+            </div>
+
+            <div class="annotation" data-decade="1980s" id="id-5">
+                <div class="box">
+                    <div class="title">1980s</div>
+                    <div class="text">Insert text.</div>
+                </div>
+            </div>
+
+            <div class="annotation" data-decade="1990s" id="id-6">
+                <div class="box">
+                    <div class="title">1990s</div>
+                    <div class="text">Insert text.</div>
+                </div>
+            </div>
+
+            <div class="annotation" data-decade="2000s" id="id-7">
+                <div class="box">
+                    <div class="title">2000s</div>
+                    <div class="text">Insert text.</div>
+                </div>
+            </div>
+
+            <div class="annotation" data-decade="2010s" id="id-8">
+                <div class="box">
+                    <div class="title">2010s</div>
+                    <div class="text">Insert text.</div>
+                </div>
+            </div>
+
+                
+            <div class="annotation" data-decade="1940s 1950s 1960s 1970s 1980s 1990s 2000s 2010s" id="id-9">
+                <!-- <div class="box">
+                    <div class="title">2010s</div>
+                    <div class="text">Insert text.</div>
+                </div> -->
+            </div>
+
+        </div>
+
+
+        <div class="testimony-table">
+
+            <div class="testimony-header">
+                <div class="hearing-id">Hearing ID</div>
+                <div class="year">Year</div>
+                <div class="witness-name">Witness Name</div>
+                <div class="title">Title</div>
+            </div>
+            <div id="testimony-table-content">
+                <div class="testimony-row">
+                    <div class="hearing-id">INSERT</div>
+                    <div class="year">INSERT</div>
+                    <div class="witness-name">INSERT</div>
+                    <div class="title">INSERT</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="chart-2">
+            <svg id="force-diagram"></svg>
+            <p>[insert chart 2]</p>
+        </div>
+        
+    </div>
+
+    <div id = "footer">
+
+        <p>I referenced this
+            source  
+            <a href = "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0230104">article</a>
+            and corresponding
+            <a href = "https://osf.io/e3h98/">public database</a> 
+            for these analyses.
+
+            Completed for ARTG5430, Spring 2021, IDDV Program, Northeastern University.
+        </p>
+
+
+    </div>
+
+    <script src="bar-chart.js"></script>
+    <script src="scroll-actions.js"></script>
+    <script src="test-table.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
