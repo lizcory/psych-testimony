@@ -52,12 +52,14 @@ function ScrollActions () {
 
                   
                         // this._dispatch.call('changeState', this, ele.dataset.state);
-                        this._dispatch.call('changeState', this, ele.dataset.decade);
+                        this._dispatch.call('changeState', this, ele.dataset.decade, eleId);
 
                     },
                     onEnterBack: () => {
                         // this._dispatch.call('changeState', this, ele.dataset.state);
-                        this._dispatch.call('changeState', this, ele.dataset.decade);
+                        this._dispatch.call('changeState', this, ele.dataset.decade, eleId);
+
+
 
                     },
                     markers: false

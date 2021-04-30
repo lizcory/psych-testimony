@@ -1,9 +1,17 @@
 const margins = {t: 50, r: 50, b: 50, l: 50};
 const size = {w: window.innerWidth, h: window.innerHeight*0.6};
+const tr_size = {w: 1300, h: 700};
+
 const svg = d3.select('svg#bar-chart');
+
+const tree_svg = d3.select('svg#tree-map');
+
 const containerG = svg.append('g');
-const dispatch = d3.dispatch('changeState');
-const dispatchBrushUpdate = d3.dispatch('brushed');
+
+const tree_containerG = tree_svg.append('g');
+
+const dispatch = d3.dispatch('changeState', "brushed");
+// const dispatchBrushUpdate = d3.dispatch('brushed');
 let filters = {years: null};
 
 
@@ -11,18 +19,34 @@ svg.attr('width', size.w)
     .attr('height', size.h);
 
 
-// d3.csv('data/psych_count.csv')
-d3.csv('data/psych_congress_testimony.csv')
-    .then(function(data) {
+tree_svg.attr('width', tr_size.w)
+    .attr('height', tr_size.h);
 
-        data = data.map((d,i) => {
+
+// d3.csv('data/psych_count.csv')
+// d3.csv('data/psych_congress_testimony.csv')
+Promise.all([
+    d3.csv('data/psych_congress_testimony.csv'),
+    d3.csv('data/markers.csv'),
+    // d3.csv('data/committee_dendrogram_top10.csv')
+    d3.json('data/witcomm_dendrogram_top5.json')
+
+
+])
+    .then(function(datasets) {
+
+        data = datasets[0].map((d,i) => {
             d.year = +d.year;
             d.id = i;
 
             return d;
         });
 
-        console.log(data);
+        // console.log(data);
+        markers = datasets[1];
+        // console.log(markers);
+        treeDat = datasets[2];
+
 
 
         let decades = new Set(data.map(d => d.decade));
@@ -40,13 +64,14 @@ d3.csv('data/psych_congress_testimony.csv')
             .size(size)
             .selection(containerG)
             .data(data)
+            .markers(markers)
             .filterState(decades)
             .dispatch(dispatch)
-            .dispatchBrushUpdate(dispatchBrushUpdate)
+            // .dispatchBrushUpdate(dispatchBrushUpdate)
             .draw();
 
 
-        // ANNOTATIONS
+        // SCROLL + TEXT BOXES
         let scrollActions = new ScrollActions();
         scrollActions
             .dispatch(dispatch)
@@ -57,21 +82,26 @@ d3.csv('data/psych_congress_testimony.csv')
         populateTable(data);
 
 
-        dispatchBrushUpdate.on('brushed', function(limits) {
+        dispatch.on('brushed', function(limits) {
             
             filters.years = limits;
-            
-    
+
             let brushFilteredData = data;
-            // if (filters.dates) {
+
+            if (filters.years) {
                 brushFilteredData = brushFilteredData.filter(d => {
-                    let year = d.year;
-                    return filters.years[0] <= year && filters.years[1] <= year;
+
+                    return filters.years[0] <= d.year && filters.years[1] >= d.year;
+
                 });
-            // }
-           
+            }
+        
             populateTable(brushFilteredData);
         })
+
+        
+        // TREE MAP
+        drawTreemap(treeDat);
 
 });
 

@@ -16,7 +16,7 @@ html, body {
 }
 
 div.container {
-    margin-bottom: 200px;
+    margin-bottom: 50px;
 }
 
 h1 {
@@ -33,6 +33,25 @@ h1 {
     margin-bottom: 50px;
 }
 
+.forest{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+
+}
+
+#tree-svg {
+    align-content: center;
+}
+
+text{
+    font-family: Helvetica, sans-serif;
+} 
+
+.tree-num {
+    font-weight: 600;
+}
 /* .brushed {
     fill: #ff3399;
     stroke: #8e1b54;
@@ -44,19 +63,36 @@ h1 {
     /* opacity: 0.5; */
 /* } */
 
+.chart-2 {
+    margin: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
+#hdr-c2 {
+    margin-bottom: 0;
+}
+
+.tree-titles {
+    font-weight: 800;
+}
+
 .testimony-table{
     /* overflow-y: scroll; */
-    position: relative;
-    margin-bottom: 50px;
+    /* position: relative; */
+    /* margin-bottom: 100px; */
     align-content: center;
     margin: auto;
     max-width: 93vw;
-    height: 200px;
+    /* height: 200px; */
+    /* display: flex; */
     
 }
 
 .testimony-header {
     /* position:fixed; */
+    height: 30px;
 }
 
 #testimony-table-content{
@@ -65,6 +101,10 @@ h1 {
     border-color: lightgray;
     border-style: solid;
     border-width: 1px;
+    background-color: #fff;
+    margin-bottom: 50px;
+    height: 200px;
+
 }
 
 .testimony-header, .testimony-row {
@@ -88,6 +128,10 @@ h1 {
     padding-top: 1rem;
 }
 
+hr {
+    width: 700px;
+}
+
 #footer {
     align-content: center;
     font-weight: 400;
@@ -103,7 +147,7 @@ p {
     padding-top: 1rem;
 }
 
-svg {
+svg#bar-chart {
     margin: auto;
     padding-top: 50px;
     /* max-width: 95vw; */
@@ -115,10 +159,17 @@ g.axis-x > g.tick > text {
 
 g.axis-x, g.axis-y {
     font-size: 10pt;
+    font-family: Helvetica, sans-serif;
 }
     
 rect.bar {
     fill: #96AD88;
+}
+
+.marker {
+    font-size: 8pt;
+    /* transform: rotateX(90deg); */
+
 }
 
 div.annotation {
@@ -133,6 +184,7 @@ div.annotation {
 div.annotation > div.box {
     position: absolute;
     width: 35vw;
+    height: 12vw;
     margin-left: 55vw;
     background: white;
     box-shadow: -2px 2px 4px #666;
@@ -147,6 +199,28 @@ div.box > div.title {
 div.box > div.text {
     font-size: 14px;
     line-height: 1.3;
+}
+
+div#tooltip-bars{
+    display: none;
+    font-family: "Lora", sans-serif;
+    font-size: 10pt;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 140px;
+    height: 100px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: -1px 1px 4px #888;
+    overflow-y:auto;
+}
+
+div#tooltip-bars > div {
+    margin-bottom: 3px;
+    margin-top: 3px;
+    font-weight: 500;
 }
 
 
@@ -170,3 +244,4 @@ a:link {
   a:active {
     color: #C9443C;
   }
+

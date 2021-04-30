@@ -108,51 +108,69 @@
 
         </div>
 
+        <div id = "tooltip-bars"> 
+            <div class="test-num"></div>
+            by
+            <div class="people"></div>
+            in
+            <div class="committees"></div>
+        </div>
+
 
         <div class="testimony-table">
 
             <div class="testimony-header">
-                <div class="hearing-id">Hearing ID</div>
                 <div class="year">Year</div>
+                <div class="hearing-id">Hearing ID</div>
                 <div class="witness-name">Witness Name</div>
+                <div class="committee">Committee</div>
                 <div class="title">Title</div>
             </div>
             <div id="testimony-table-content">
                 <div class="testimony-row">
-                    <div class="hearing-id">INSERT</div>
                     <div class="year">INSERT</div>
+                    <div class="hearing-id">INSERT</div>
                     <div class="witness-name">INSERT</div>
+                    <div class="committee">INSERT</div>
                     <div class="title">INSERT</div>
                 </div>
             </div>
 
         </div>
 
-        <div class="chart-2">
-            <svg id="force-diagram"></svg>
-            <p>[insert chart 2]</p>
+        <div class = "forest"> 
+            <h3 id = "hdr-c2">Top 5 Committees: Key Witnesses</h3>
+            <div class="chart-2">
+                <svg id="tree-map"></svg>
+            </div>
+            <p>For Congressional committees with greatest numbers of psychologist testimonies, these witnesses spoke the most.</p>
         </div>
         
     </div>
 
+    <hr>
     <div id = "footer">
 
-        <p>I referenced this
-            source  
-            <a href = "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0230104">article</a>
-            and corresponding
-            <a href = "https://osf.io/e3h98/">public database</a> 
-            for these analyses.
-
+        <p>Analyses in this project were conducted on a <a href = "https://osf.io/e3h98/">public dataset</a>  
+            collected by Thomas V. Maher and colleagues, as reported in their research paper
+            <a href = "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0230104">
+                "Social scientists’ testimony before Congress in the United States between 1946-2016, trends from a new dataset"</a> (Maher et. al, 2020). 
+            The dataset was subsetted to include testimonies from all witnesses tagged as "Psychologist", 
+            defined in project's data codebook as "anyone with an advanced degree (MA or above) in Psychology or 
+            affiliated fields (i.e. Therapy, etc.)."
+            <br>
+            <br>
             Completed for ARTG5430, Spring 2021, IDDV Program, Northeastern University.
         </p>
-
 
     </div>
 
     <script src="bar-chart.js"></script>
     <script src="scroll-actions.js"></script>
     <script src="test-table.js"></script>
+    <script src="tree-map.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 
+
+
