@@ -31,13 +31,10 @@ function ScrollActions () {
         let elements = document.getElementsByClassName('annotation');
         elements = Array.from(elements);
 
-        // console.log(elements);
-
         elements.forEach((ele, i) => {
             // getting id for each annotation
             let eleId = ele.getAttribute('id');
 
-            // console.log(eleId);
             // adding triggers to each annotato);
             // so we can update the bar-chart
             // as per a certain annotation
@@ -49,17 +46,13 @@ function ScrollActions () {
                     end: `bottom center`,
                     id: ele.getAttribute('id'),
                     onEnter: () => {
-
                   
-                        // this._dispatch.call('changeState', this, ele.dataset.state);
                         this._dispatch.call('changeState', this, ele.dataset.decade, eleId);
 
                     },
                     onEnterBack: () => {
-                        // this._dispatch.call('changeState', this, ele.dataset.state);
+
                         this._dispatch.call('changeState', this, ele.dataset.decade, eleId);
-
-
 
                     },
                     markers: false

@@ -1,17 +1,15 @@
 const margins = {t: 50, r: 50, b: 50, l: 50};
+
 const size = {w: window.innerWidth, h: window.innerHeight*0.6};
 const tr_size = {w: 1300, h: 700};
 
 const svg = d3.select('svg#bar-chart');
-
 const tree_svg = d3.select('svg#tree-map');
 
 const containerG = svg.append('g');
-
 const tree_containerG = tree_svg.append('g');
 
 const dispatch = d3.dispatch('changeState', "brushed");
-// const dispatchBrushUpdate = d3.dispatch('brushed');
 let filters = {years: null};
 
 
@@ -23,14 +21,10 @@ tree_svg.attr('width', tr_size.w)
     .attr('height', tr_size.h);
 
 
-// d3.csv('data/psych_count.csv')
-// d3.csv('data/psych_congress_testimony.csv')
 Promise.all([
     d3.csv('data/psych_congress_testimony.csv'),
     d3.csv('data/markers.csv'),
-    // d3.csv('data/committee_dendrogram_top10.csv')
     d3.json('data/witcomm_dendrogram_top5.json')
-
 
 ])
     .then(function(datasets) {
@@ -42,19 +36,12 @@ Promise.all([
             return d;
         });
 
-        // console.log(data);
         markers = datasets[1];
-        // console.log(markers);
         treeDat = datasets[2];
-
-
 
         let decades = new Set(data.map(d => d.decade));
         decades = Array.from(decades);
         decades = decades.sort();
-
-        // console.log(decades)
-        // console.log(decades.slice(0,2));
         
         // BAR CHART
         let barChart = new BarChart();
@@ -67,16 +54,13 @@ Promise.all([
             .markers(markers)
             .filterState(decades)
             .dispatch(dispatch)
-            // .dispatchBrushUpdate(dispatchBrushUpdate)
             .draw();
-
 
         // SCROLL + TEXT BOXES
         let scrollActions = new ScrollActions();
         scrollActions
             .dispatch(dispatch)
             .addScrollTriggers();
-
 
         // TABLE
         populateTable(data);

@@ -7,12 +7,8 @@ html, body {
     margin: 0px;
     /* background: #F2F0DA; */
     background: #eee;
-
-    /* font-family: 'Lato',sans-serif; */
     font-family: 'Lora',sans-serif;
     color: #202A32;
-
-    /* color: #515953 */
 }
 
 div.container {
@@ -25,8 +21,6 @@ h1 {
     margin: auto;
     padding-top: 50px;
     font-size: 2.5rem;
-   
-
 }
 
 .chart-1 {
@@ -52,16 +46,7 @@ text{
 .tree-num {
     font-weight: 600;
 }
-/* .brushed {
-    fill: #ff3399;
-    stroke: #8e1b54;
-    opacity: 1.0;
-} */
 
-/* .non_brushed { */
-    /* fill: #404040; */
-    /* opacity: 0.5; */
-/* } */
 
 .chart-2 {
     margin: 50px;
@@ -79,19 +64,12 @@ text{
 }
 
 .testimony-table{
-    /* overflow-y: scroll; */
-    /* position: relative; */
-    /* margin-bottom: 100px; */
     align-content: center;
     margin: auto;
-    max-width: 93vw;
-    /* height: 200px; */
-    /* display: flex; */
-    
+    max-width: 93vw;    
 }
 
 .testimony-header {
-    /* position:fixed; */
     height: 30px;
 }
 
@@ -150,7 +128,6 @@ p {
 svg#bar-chart {
     margin: auto;
     padding-top: 50px;
-    /* max-width: 95vw; */
 }
 
 g.axis-x > g.tick > text {
@@ -169,7 +146,6 @@ rect.bar {
 .marker {
     font-size: 8pt;
     /* transform: rotateX(90deg); */
-
 }
 
 div.annotation {

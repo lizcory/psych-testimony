@@ -9,7 +9,7 @@ function BarChart() {
         return this._data;
     }
 
-    // annotations
+    // markers
      this.markers = function (markers) {
         if (arguments.length > 0) {
             this._markers = markers;
@@ -69,16 +69,13 @@ function BarChart() {
         if (arguments[0].length > 5 && !Array.isArray(arguments[0])) {
             // this._filterState = 0;
             let decStr = decade + '';
-            // console.log(dec);
 
             decArr = decStr.split(" ");
-            // console.log(decArr);
 
             this._filterState = decArr; 
             
             overview = 1;
 
-            // console.log(this);
             return this;
             
         }
@@ -89,7 +86,6 @@ function BarChart() {
 
             overview = 0;
 
-            // console.log(this);
             return this;
         }
 
@@ -126,19 +122,16 @@ function BarChart() {
           });
         
         this._scaleX = d3.scaleBand()
-                // .domain(filteredData.map(d => d.year))
                 .domain(years_unique)
                 .range([0, this._chartSize.w])
                 .padding(0.3);
                 
         this._scaleY = d3.scaleLinear()
-                // .domain([0, d3.max(filteredData, d => d.count)])
                 .domain([0, d3.max(filteredData, d => d[1].length)])
                 .range([this._chartSize.h, 0]);
                 
 
         this._sel.attr('transform', `translate(${this._margin.l},${this._margin.t})`);
-
 
         /// tooltip
         // selecting tooltip
@@ -229,9 +222,6 @@ function BarChart() {
                 tooltip.style('display', 'none');
             });
 
-                
-
-
         this._drawAxes(this._scaleX, this._scaleY);
 
 
@@ -308,8 +298,6 @@ function BarChart() {
 
             this._dispatch.on('changeState', (decade, eleId, reverse) => {
 
-                // console.log(eleId);
-
                 if (eleId === "id-9") {
 
                     this._addBrush();
@@ -331,16 +319,6 @@ function BarChart() {
         return this._dispatch;
     }
 
-    // this.dispatchBrushUpdate = function () {
-    //     if (arguments.length > 0) {
-    //         this._dispatchBrushUpdate = arguments[0];
-            
-    //         // if (arguments[1]) {
-    //         //     this._dispatchType = arguments[1];
-    //         // }
-
-    //         return this;
-    //     }  
     // call dispatch on brushed event 
     this._brushed = (event) => {
         if (!event.selection) return;
@@ -395,6 +373,7 @@ function BarChart() {
     }    
     ///
 
+    //################# CODE GRAVEYARD, R.I.P. #################
     // this._addMarkers = function(filteredData, filteredMarkers) {
     //     /// MARKERS
     //     let markerSel = this._sel.selectAll(".marker")
