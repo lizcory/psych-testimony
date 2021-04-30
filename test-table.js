@@ -27,6 +27,7 @@ function TestTable() {
                 <div class="year">${d.year}</div>
                 <div class="hearing-id">${d.hearing_id}</div>
                 <div class="witness-name">${d.witness_name}</div>
+                <div class="witness-name">${d.witness_affiliation}</div>
                 <div class="committee">${d.full_committee1}</div>
                 <div class="title">${d.title_description}</div>
                 `

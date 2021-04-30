@@ -14,9 +14,13 @@ function BarChart() {
         if (arguments.length > 0) {
             this._markers = markers;
             return this;
+        
         }
+        
         return this._markers;
+
     }
+
 
     // selection
     this.selection = function (sel) {
@@ -71,7 +75,9 @@ function BarChart() {
             // console.log(decArr);
 
             this._filterState = decArr; 
-      
+            
+            overview = 1;
+
             // console.log(this);
             return this;
             
@@ -80,6 +86,8 @@ function BarChart() {
         // else if (arguments[0].length > 0 & arguments[0].length < 6) {
         else {
             this._filterState = decade;
+
+            overview = 0;
 
             // console.log(this);
             return this;
@@ -101,8 +109,10 @@ function BarChart() {
             // var filteredData = this._data;
             var filteredData = this._data.filter(d => this._filterState.includes(d.decade));
             var filteredMarkers = this._markers.filter(d => this._filterState.includes(d.decade));
-
+            // var filteredMarkers = 0;
         }
+
+        console.log(overview);
 
         // get x domain of years based on current selected decade
         let years = filteredData.map(d => d.year); 
@@ -134,33 +144,7 @@ function BarChart() {
         // selecting tooltip
         let tooltip = d3.select('div#tooltip-bars');
 
-        
-        /// MARKERS
-        let markerSel = this._sel.selectAll(".marker")
-            .data(filteredMarkers)
-        markerSel.enter()
-            .append("text")
-            .attr("class", "marker")
-            .attr("x", d => this._scaleX(d.year))
-            .attr("y", this._scaleY(d3.max(filteredData, d => d[1].length)) )
-            // .attr("y", d3.max(filteredData, d => d[1].length))
-            .text(function(d) { return d.marker; })
-            .transition()
-            .duration(300)
-
-        markerSel.exit()
-            .transition()
-            .duration(300)
-            .style('fill', "#eee")
-            .remove();
-
-        markerSel
-            .transition()
-            .duration(300)
-            .attr("x", d => this._scaleX(d.year))
-            .attr("y", this._scaleY(d3.max(filteredData, d => d[1].length)) )
-            .text(function(d) { return d.marker; })
-
+        // console.log(overview);    
 
 
         /// BARS
@@ -333,6 +317,8 @@ function BarChart() {
                 } else {
 
                     this._sel.select("g.brush").remove();
+
+                    // this._addMarkers();
                 }
                 
                 
@@ -354,10 +340,7 @@ function BarChart() {
     //         // }
 
     //         return this;
-    //     }
-    //     return this._dispatchBrushUpdate;
-    // }
-
+    //     }  
     // call dispatch on brushed event 
     this._brushed = (event) => {
         if (!event.selection) return;
@@ -387,7 +370,7 @@ function BarChart() {
 
                     // console.log("blue");
 
-                    return 'steelblue';
+                    // return 'steelblue';
                 }
                 return 'grey';
             });
@@ -411,6 +394,44 @@ function BarChart() {
 
     }    
     ///
+
+    // this._addMarkers = function(filteredData, filteredMarkers) {
+    //     /// MARKERS
+    //     let markerSel = this._sel.selectAll(".marker")
+    //         .data(filteredMarkers)
+    //     markerSel.enter()
+    //         .append("text")
+    //         .attr("class", "marker")
+    //         .attr("x", d => this._scaleX(d.year))
+    //         .attr("y", this._scaleY(d3.max(filteredData, d => d[1].length)) )
+    //         // .attr("y", d3.max(filteredData, d => d[1].length))
+    //         .text(function(d) { return d.marker; })
+    //         .transition()
+    //         .duration(300)
+
+    //     markerSel.exit()
+    //         .transition()
+    //         .duration(300)
+    //         .style('fill', "#eee")
+    //         .remove();
+
+    //     markerSel
+    //         .transition()
+    //         .duration(300)
+    //         .attr("x", d => this._scaleX(d.year))
+    //         .attr("y", this._scaleY(d3.max(filteredData, d => d[1].length)) )
+    //         .text(function(d) { return d.marker; });
+    
+    // }
+
+
+
+
+
+
+
+
+
 
 
     return this;
