@@ -159,9 +159,10 @@ div.annotation {
 
 div.annotation > div.box {
     position: absolute;
-    min-width: 35vw;
-    /* min-width: 300px; */
-    /* min-height: 100px; */
+    min-width: 30vw;
+    max-width: 35vw;
+    /* width: 300px; */
+    /* height: 100px; */
     min-height: 12vw;
     margin-left: 55vw;
     background: white;
