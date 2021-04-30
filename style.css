@@ -155,16 +155,21 @@ div.annotation {
     left: 0px;
     display: flex;
     align-items: center;
+
 }
 
 div.annotation > div.box {
     position: absolute;
     width: 35vw;
+    min-width: 300px;
+    min-height: 100px;
     height: 12vw;
     margin-left: 55vw;
     background: white;
     box-shadow: -2px 2px 4px #666;
     padding: 15px;
+    overflow: auto;
+
 }
 
 div.box > div.title {
