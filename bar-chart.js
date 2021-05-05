@@ -255,6 +255,8 @@ function BarChart() {
         }
 
 
+        
+
     }
 
     // draw axes
@@ -405,10 +407,26 @@ function BarChart() {
 
 
 
-
-
-
-
+    // window.onresize = function() {
+    //     size.w = document.querySelector('.chart-1').clientWidth;
+    //     size.h = window.innerHeight * 0.8;
+    
+    //     svg.attr('width', size.w)
+    //         .attr('height', size.h)
+    //         .attr('viewBox', [-size.w / 2, -size.h / 2, size.w, size.h]);
+    
+    //     // if (size.w > 1200) {
+    //     //     fontSize.nodes = 10;
+    //     // } else if (size.w > 720) {
+    //     //     fontSize.nodes = 8;
+    //     // } else if (size.w > 540) {
+    //     //     fontSize.nodes = 6;
+    //     // } else {
+    //     //     fontSize.nodes = 5;
+    //     // }
+    
+    //     // this.draw();
+    // }
 
 
 
@@ -422,7 +440,8 @@ function BarChart() {
 
 
 
- /////////////////////////////////////////////////
+
+ ///////////////////////////////////////////////
     // this.axisXTickValues = function () {
     //     if (arguments.length > 0) {
     //         this._axisXTickValues = arguments[0];

@@ -1,6 +1,9 @@
 const margins = {t: 50, r: 50, b: 50, l: 50};
 
 const size = {w: window.innerWidth, h: window.innerHeight*0.6};
+size.w = document.querySelector('.chart-1').clientWidth;
+
+
 const tr_size = {w: 1300, h: 700};
 
 const svg = d3.select('svg#bar-chart');
@@ -97,3 +100,5 @@ function populateTable(data) {
         .data(data.sort((a, b) => a.year - b.year))
         .populate();
 }
+
+
