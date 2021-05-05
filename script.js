@@ -16,12 +16,15 @@ const dispatch = d3.dispatch('changeState', "brushed");
 let filters = {years: null};
 
 
-svg.attr('width', size.w)
-    .attr('height', size.h);
+// svg.attr('width', size.w)
+//     .attr('height', size.h);
 
+svg.attr("viewBox", `0 0 ${size.w} ${size.h}`);
 
 tree_svg.attr('width', tr_size.w)
     .attr('height', tr_size.h);
+
+// tree_svg.attr("viewBox", `0 0 ${tr_size.w} ${tr_size.h}`);
 
 
 Promise.all([
