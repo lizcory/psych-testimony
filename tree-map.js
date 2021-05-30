@@ -48,7 +48,7 @@ if (size.w < 1300) {
     var largeFont = "0.65rem";
     var titleFont = "0.75rem";
     var yLowerBuffer = 35;
-    var yTextBuffer = 2;
+    var yTextBuffer = 5;
     var yTitleBuffer = 10;
 
 
@@ -65,7 +65,9 @@ if (size.w < 546) {
     var smallFont = "0.45rem";
     var largeFont = "0.45rem";
     var titleFont = "0.55rem";
-    var yLowerBuffer = 30;
+    var yLowerBuffer = 28;
+    var yTextBuffer = 2;
+
     
 
 }

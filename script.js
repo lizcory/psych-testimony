@@ -30,6 +30,8 @@ if (size.w < 1300) {
 
 } else if (size.w < 546) {
     tr_size.w = size.w;
+    tr_size.h = size.h*1.75;
+
 }
 
 tree_svg
