@@ -1,3 +1,4 @@
+
 function BarChart() {
 
     // data
@@ -47,8 +48,11 @@ function BarChart() {
 
             return this;
         }
+
         return this._size;
     }
+
+
 
     // margin
     this.margin = function (margin) {
@@ -96,19 +100,26 @@ function BarChart() {
     // draw the bar chart
     this.draw = function () {
 
-        // if (this._filterState != 0){
-        if (this._filterState.length < 2){
+        // console.log(this._filterState.length);
+
+        // if we just have one decade, it will be 5 characters, e.g., 1950s
+        if (this._filterState.length <= 5){
             var filteredData = this._data.filter(d => d.decade === this._filterState);
             var filteredMarkers = this._markers.filter(d => d.decade === this._filterState);
 
+        // the argument for multiple decades will be longer
+        } else if (this._filterState.length > 5 & this._size.w < 992) {
+
+            var filteredData = this._data.filter(d => this._filterState.includes(d.decade) & 
+            (  (d.year % 10 == 0) | (d.year == 1946)));
+
         } else {
-            // var filteredData = this._data;
+
             var filteredData = this._data.filter(d => this._filterState.includes(d.decade));
             var filteredMarkers = this._markers.filter(d => this._filterState.includes(d.decade));
-            // var filteredMarkers = 0;
         }
 
-        console.log(overview);
+        // console.log(filteredData);
 
         // get x domain of years based on current selected decade
         let years = filteredData.map(d => d.year); 
@@ -375,7 +386,24 @@ function BarChart() {
     }    
     ///
 
-    //################# CODE GRAVEYARD, R.I.P. #################
+
+    //$$$$$$$$$$$$$
+
+    //$$$$$$$$$$$$$
+
+
+    return this;
+
+}
+
+
+
+
+
+
+////////////////////////////////////////
+
+//################# CODE GRAVEYARD, R.I.P. #################
     // this._addMarkers = function(filteredData, filteredMarkers) {
     //     /// MARKERS
     //     let markerSel = this._sel.selectAll(".marker")
@@ -427,18 +455,6 @@ function BarChart() {
     
     //     // this.draw();
     // }
-
-
-
-
-    return this;
-
-}
-
-
-
-
-
 
 
  ///////////////////////////////////////////////

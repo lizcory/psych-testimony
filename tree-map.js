@@ -1,13 +1,8 @@
 
-// source: https://github.com/lizcory/Week-7/blob/master/scripts-complete/treemap.js
-
-// source2: https://www.d3-graph-gallery.com/graph/treemap_custom.html 
-
-// source 3: https://stackoverflow.com/questions/24784302/wrapping-text-in-d3/24785497 
 
 function drawTreemap(data) {
 
- // stratify the data: reformatting for d3.js
+// stratify the data: reformatting for d3.js
 //  var root = d3.stratify()
 //     .id(function(d) { return d.name; })   // Name of the entity (column name is name in csv)
 //     .parentId(function(d) { return d.parent; })   // Name of the parent (column name is parent in csv)
@@ -15,6 +10,13 @@ function drawTreemap(data) {
 
 // root.sum(function(d) { return +d.value })   // Compute the numeric value for each entity
 
+var smallFont = "9pt";
+var largeFont = "13pt";
+var titleFont = "13pt";
+
+var yLowerBuffer = 50;
+var yTextBuffer = 5;
+var yTitleBuffer = 21;
 
 var root = d3.hierarchy(data).sum(function(d){ return d.value}) // Here the size of each leave is given in the 'value' field in input data
 
@@ -29,33 +31,44 @@ d3.treemap()
     .paddingInner(3) 
  (root)
 
-console.log(root.leaves())
+// console.log(root.leaves())
 
 
 
-console.log(root.leaves()[1].data);
+if (size.w < 1300) {
 
-// let domain = root.leaves().map(d => {
-//         let x = d;
-//         while (x.depth > 1) { x = x.parent; }
-//         return d.data.name;
-//     });
-//     domain = new Set(domain);
-//     domain = Array.from(domain);
+    d3.treemap()
+    .size([tr_size.w, tr_size.h])
+    .paddingTop(15)
+    .paddingRight(4)
+    .paddingInner(3) 
+ (root)
+
+    var smallFont = "0.55rem";
+    var largeFont = "0.65rem";
+    var titleFont = "0.75rem";
+    var yLowerBuffer = 35;
+    var yTextBuffer = 2;
+    var yTitleBuffer = 10;
 
 
-// let colorScale = d3.scaleOrdinal([
-//     "#4b677a",
-//     "#a38678",
-//     "#a1af9e",
-//     "#5d4039",
-//     "#85a9b9",
-//     "#4a4835",
-//     "#9eadb6",
-//     "#73735a",
-//     "#bf9ca8",
-//     "#8d89a2"])
-//         .domain(domain);
+}
+
+if (size.w < 546) {
+
+    d3.treemap()
+    .size([tr_size.w, tr_size.h])
+    .paddingTop(15)
+    .paddingRight(4)
+    .paddingInner(3) 
+
+    var smallFont = "0.45rem";
+    var largeFont = "0.45rem";
+    var titleFont = "0.55rem";
+    var yLowerBuffer = 30;
+    
+
+}
 
 
 let domain = ["appropriations", "education and labor", "labor and human resources",
@@ -110,10 +123,10 @@ tree_svg
     .enter()
     .append("text")
         .classed('tree-text', true)
-        .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
-        .attr("y", function(d){ return d.y0+5})    // +20 to adjust position (lower)
+        .attr("x", function(d){ return d.x0+5})    // + to adjust position (more right)
+        .attr("y", function(d){ return d.y0+yTextBuffer})    // + to adjust position (lower)
         .text(function(d){ return d.data.name})
-        .attr("font-size", "9pt")
+        .attr("font-size", smallFont)
         .attr("fill", "white")
         .call(wrap, 10);
 
@@ -124,10 +137,11 @@ tree_svg
     .enter()
     .append("text")
         .classed('tree-num', true)
-        .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
-        .attr("y", function(d){ return d.y0+50})    // +20 to adjust position (lower)
+        .attr("x", function(d){ return d.x0+5})    // + to adjust position (more right)
+        .attr("y", function(d){ return d.y0+yLowerBuffer})    // + to adjust position (lower)
         .text(function(d){ return d.data.value})
         .attr("font-size", "13pt")
+        .attr("font-size", largeFont)
         .attr("fill", "white");
     
 // add titles
@@ -138,9 +152,9 @@ tree_svg
     .append("text")
         .classed('tree-titles', true)
         .attr("x", function(d){ return d.x0})
-        .attr("y", function(d){ return d.y0+21})
+        .attr("y", function(d){ return d.y0+yTitleBuffer})
         .text(function(d){ return d.data.name })
-        .attr("font-size", "13pt")
+        .attr("font-size", titleFont)
         .attr("fill",  function(d){ return colorScale(d.data.name)} );
 
 

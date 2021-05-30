@@ -12,7 +12,9 @@ html, body {
 }
 
 div.container {
-    margin-bottom: 50px;
+    margin-bottom: 2rem;
+    /* display: flex; */
+    align-items: center;
 }
 
 h1 {
@@ -50,9 +52,9 @@ text{
 
 
 .chart-2 {
-    margin: 50px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
 
 }
 
@@ -71,7 +73,11 @@ text{
 }
 
 .testimony-header {
-    height: 30px;
+    height: 2rem;
+    min-height: 10px;
+    border: 1px solid lightgray;
+    border-bottom: none;
+
 }
 
 #testimony-table-content{
@@ -81,9 +87,13 @@ text{
     border-style: solid;
     border-width: 1px;
     background-color: #fff;
-    margin-bottom: 100px;
-    height: 200px;
+    margin-bottom: 3rem;
+    height: 12rem;
 
+}
+
+.testimony-row {
+    border-bottom: 1px solid lightgray;
 }
 
 .testimony-header, .testimony-row {
@@ -115,7 +125,7 @@ hr {
     align-content: center;
     font-weight: 400;
     font-size: .8rem;
-    margin: auto;
+    /* margin: auto; */
     margin-bottom: 50px;
 }
 
@@ -228,3 +238,122 @@ a:link {
     color: #C9443C;
   }
 
+
+/*///////////////////////////////////////////////*/
+@media only screen and (max-width: 992px) {
+
+    .section-ctr{
+        margin-left: 4vw;
+        margin-right: 4vw;
+    }
+
+    div.annotation > div.box {
+        /* position: absolute; */
+        min-width: 50vw;
+        max-width: 55vw;
+        margin: auto;
+        margin-left: 35vw;
+        /* margin-left: 2vw; */
+        /* margin-right: 2vw; */
+        /* width: 300px; */
+        /* height: 100px; */
+        min-height: 20vw;
+        /* margin-left: 55vw; */
+        background: white;
+        box-shadow: -2px 2px 4px #666;
+        padding: 1rem;
+        /* overflow: auto; */
+        display: inline-block;
+        
+    }
+
+
+} 
+
+
+/*///////////////////////////////////////////////*/
+@media only screen and (max-width: 576px) {
+
+    .container, hr {
+        /* min-width: 90vw; */
+        max-width: 95vw;
+    }
+
+    div.annotation {
+        height: 90vh;
+        width: 90vw;
+    }
+
+    
+    div.annotation > div.box {
+        /* position: absolute; */
+        min-width: 80vw;
+        max-width: 85vw;
+        margin: auto;
+        /* margin-left: 2vw; */
+        /* margin-right: 2vw; */
+        /* width: 300px; */
+        /* height: 100px; */
+        min-height: 30vw;
+        /* margin-left: 55vw; */
+        background: white;
+        box-shadow: -2px 2px 4px #666;
+        padding: 1rem;
+        /* overflow: auto; */
+        display: inline-block;
+    
+    }
+
+
+    .testimony-table {
+        min-width: 90vw;
+        max-width: 90vw;
+        /* margin-left: 0; */
+        /* margin-right: 0; */
+        /* margin-left: 2vw; */
+        /* margin-right: 2vw; */
+        margin-bottom: 2rem;
+    }
+
+    .testimony-header {
+        min-width: 90vw;
+        max-width: 90vw;
+        /* width: 100%; */
+
+        min-height: 10vw;
+
+        font-size: 7pt;
+
+    }
+
+    #testimony-table-content {
+        min-width: 90vw;
+        max-width: 90vw;
+
+        min-height: 60vw;
+
+        font-size: 7pt;
+
+        margin-bottom: 0;
+
+    }
+
+    .chart-1 {
+        margin-bottom: 2rem;
+    }
+
+    div.container {
+        margin: 0;
+    }
+
+    hr {
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .forest {
+        margin-top: 2rem;
+    }
+  
+}  

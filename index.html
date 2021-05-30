@@ -21,27 +21,29 @@
 
 </head>
 <body>
-    <div class="container">
-        <h1>Psychologist testimony in Congress 1946 - 2016</h1>
-        <h3 id = "byline">by Liz Cory</h3>
-        <p>
-           The United States Congress frequently calls on experts to discuss policy and weigh in on proposed legislation. This project presents a brief history of US Congressional testimony given by psychologists.
-        </p>
+    <!-- <div class="container"> -->
 
-        <div class="chart-1">
+        <div id = "opener" class = "section-ctr">
+            <h1>Psychologist testimony in&nbsp;Congress 1946&nbsp;-&nbsp;2016</h1>
+            <h3 id = "byline">by Liz Cory</h3>
+            <p>
+            The United States Congress frequently calls on experts to discuss policy and weigh in on proposed legislation. This project presents a brief history of US Congressional testimony given by psychologists.
+            </p>
+        </div>
+
+        <div class="chart-1" class = "section-ctr">
             <svg id="bar-chart"></svg>
         </div>
 
 
-        <div id="annotation-container">
+        <div id="annotation-container" class = "section-ctr">
             <div class="annotation" data-decade= '1940s 1950s 1960s 1970s 1980s 1990s 2000s 2010s' id="id-0">
                 <div class="box">
                     <div class="title">Overview</div>
                     <div class="text">The Bureau of Labor Statistics predicts employment of psychologists <a href ="https://www.apa.org/monitor/2017/11/trends-popular">will grow</a>
-                         by 19 percent between 2014 and 2024 — swiftly outpacing the seven percent average for all occupations. Yet, psychologists' representation in Congress hasn't been as scarce since
-                        the 1940s & '50s. Although it is difficult to pin down why, it is often instructive to start by examining the past.
-
-                        Keep scrolling for highlights of testimonies in previous decades.
+                         by 19 percent between 2014 and 2024 — swiftly outpacing the seven percent average for all occupations. Yet, psychologists' representation in Congress has been declining over
+                         the past several years. To understand this trend, we can begin by examining the history.
+                        Keep scrolling for testimony highlights from previous decades.
 
                     </div>
                 </div>
@@ -161,7 +163,7 @@
         </div>
 
 
-        <div class="testimony-table">
+        <div class="testimony-table" class = "section-ctr">
 
             <div class="testimony-header">
                 <div class="year">Year</div>
@@ -184,32 +186,33 @@
 
         </div>
 
-        <div class = "forest"> 
+        <div class = "forest" class = "section-ctr"> 
             <h3 id = "hdr-c2">Top 5 Committees: Key Witnesses</h3>
             <div class="chart-2">
                 <svg id="tree-map"></svg>
+                <p>In Congressional committees with the top-five highest counts of psychologist testimonies, these witnesses spoke the most.</p>
             </div>
-            <p>In Congressional committees with the top-five highest counts of psychologist testimonies, these witnesses spoke the most.</p>
         </div>
         
-    </div>
+        <hr class = "section-ctr">
+        <div id = "footer" class = "section-ctr">
 
-    <hr>
-    <div id = "footer">
+            <p>These analyses were conducted on a <a href = "https://osf.io/e3h98/">public dataset</a>  
+                collected by Thomas V. Maher and colleagues, as reported in their research paper
+                <a href = "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0230104">
+                    "Social scientists’ testimony before Congress in the United States between 1946-2016, trends from a new dataset"</a> (Maher et. al, 2020). 
+                The dataset was subsetted to include testimonies from all witnesses tagged as a "Psychologist", 
+                defined in project's data codebook as "anyone with an advanced degree (MA or above) in Psychology or 
+                affiliated fields (i.e. Therapy, etc.)."
+                <br>
+                <br>
+                Completed for ARTG5430, Spring 2021, IDDV Program, Northeastern University.
+            </p>
 
-        <p>These analyses were conducted on a <a href = "https://osf.io/e3h98/">public dataset</a>  
-            collected by Thomas V. Maher and colleagues, as reported in their research paper
-            <a href = "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0230104">
-                "Social scientists’ testimony before Congress in the United States between 1946-2016, trends from a new dataset"</a> (Maher et. al, 2020). 
-            The dataset was subsetted to include testimonies from all witnesses tagged as a "Psychologist", 
-            defined in project's data codebook as "anyone with an advanced degree (MA or above) in Psychology or 
-            affiliated fields (i.e. Therapy, etc.)."
-            <br>
-            <br>
-            Completed for ARTG5430, Spring 2021, IDDV Program, Northeastern University.
-        </p>
+        </div>
 
-    </div>
+    <!-- </div> -->
+
 
     <script src="bar-chart.js"></script>
     <script src="scroll-actions.js"></script>
