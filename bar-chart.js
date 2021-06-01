@@ -111,7 +111,9 @@ function BarChart() {
         } else if (this._filterState.length > 5 & this._size.w < 992) {
 
             var filteredData = this._data.filter(d => this._filterState.includes(d.decade) & 
-            (  (d.year % 10 == 0) | (d.year == 1946)));
+            (  (d.year % 5 == 0) | (d.year == 1946) | (d.year == 2016)));
+            // (d.year % 2 == 0));
+
 
         } else {
 
