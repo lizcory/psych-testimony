@@ -54,7 +54,7 @@ text{
 .chart-2 {
     margin: 2rem;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
 
 }
 
@@ -126,7 +126,9 @@ text{
 }
 
 hr {
-    width: 700px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #footer {
@@ -276,19 +278,26 @@ a:link {
         
     }
 
+    hr {
+        /* min-width: 90vw; */
+        max-width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+
 
 } 
 
-#testimony-table-content {
-    /* font-size: 8pt; */
-}
 
 /*///////////////////////////////////////////////*/
 @media only screen and (max-width: 576px) {
 
-    .container, hr {
-        /* min-width: 90vw; */
-        max-width: 95vw;
+    hr {
+        max-width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     div.annotation {
