@@ -17,6 +17,7 @@ var titleFont = "13pt";
 var yLowerBuffer = 50;
 var yTextBuffer = 5;
 var yTitleBuffer = 21;
+var xTitleBuffer = 0;
 
 var root = d3.hierarchy(data).sum(function(d){ return d.value}) // Here the size of each leave is given in the 'value' field in input data
 
@@ -28,7 +29,7 @@ d3.treemap()
     .size([tr_size.w, tr_size.h])
     .paddingTop(28)
     .paddingRight(0)
-    .paddingInner(3) 
+    .paddingInner(5) 
  (root)
 
 // console.log(root.leaves())
@@ -48,6 +49,7 @@ if (size.w < 1300) {
     var yLowerBuffer = 35;
     var yTextBuffer = 5;
     var yTitleBuffer = 10;
+    var xTitleBuffer = 2;
 }
 
 if (size.w < 546) {
@@ -55,7 +57,9 @@ if (size.w < 546) {
     d3.treemap()
     .size([tr_size.w, tr_size.h])
     .paddingTop(15)
-    .paddingRight(0)
+    .paddingBottom(2)
+    .paddingRight(2)
+    .paddingLeft(2)
     .paddingInner(3) 
     (root)
 
@@ -147,7 +151,7 @@ tree_svg
     .enter()
     .append("text")
         .classed('tree-titles', true)
-        .attr("x", function(d){ return d.x0})
+        .attr("x", function(d){ return d.x0 + xTitleBuffer})
         .attr("y", function(d){ return d.y0+yTitleBuffer})
         .text(function(d){ return d.data.name })
         .attr("font-size", titleFont)
