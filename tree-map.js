@@ -27,21 +27,19 @@ var root = d3.hierarchy(data).sum(function(d){ return d.value}) // Here the size
 d3.treemap()
     .size([tr_size.w, tr_size.h])
     .paddingTop(28)
-    .paddingRight(7)
+    .paddingRight(0)
     .paddingInner(3) 
  (root)
 
 // console.log(root.leaves())
-
-
 
 if (size.w < 1300) {
 
     d3.treemap()
     .size([tr_size.w, tr_size.h])
     .paddingTop(15)
-    .paddingRight(4)
-    .paddingInner(3) 
+    .paddingRight(0)
+    .paddingInner(5) 
  (root)
 
     var smallFont = "0.55rem";
@@ -50,8 +48,6 @@ if (size.w < 1300) {
     var yLowerBuffer = 35;
     var yTextBuffer = 5;
     var yTitleBuffer = 10;
-
-
 }
 
 if (size.w < 546) {
@@ -59,17 +55,15 @@ if (size.w < 546) {
     d3.treemap()
     .size([tr_size.w, tr_size.h])
     .paddingTop(15)
-    .paddingRight(4)
+    .paddingRight(0)
     .paddingInner(3) 
+    (root)
 
     var smallFont = "0.45rem";
-    var largeFont = "0.45rem";
-    var titleFont = "0.55rem";
-    var yLowerBuffer = 28;
+    var largeFont = "0.50rem";
+    var titleFont = "0.50rem";
+    var yLowerBuffer = 27;
     var yTextBuffer = 2;
-
-    
-
 }
 
 

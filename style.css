@@ -73,42 +73,50 @@ text{
 }
 
 .testimony-header {
-    height: 2rem;
-    min-height: 10px;
+    height: 4rem;
+    /* min-height: 2rem; */
     border: 1px solid lightgray;
     border-bottom: none;
-
-}
-
-#testimony-table-content{
-    overflow-y: scroll;
-    max-height:100%;
-    border-color: lightgray;
-    border-style: solid;
-    border-width: 1px;
-    background-color: #fff;
-    margin-bottom: 3rem;
-    height: 12rem;
-
+    border-right: none;
+    display: flex;
+    flex-direction: row;
 }
 
 .testimony-row {
     border-bottom: 1px solid lightgray;
-}
-
-.testimony-header, .testimony-row {
+    border-right: none;
     display: flex;
     flex-direction: row;
 }
+
 .testimony-header > div, .testimony-row > div {
+    min-width: 5%;
     width: 25%;
-    padding: 5px;
+    padding: 0.50rem;
+    border-right: 1px solid lightgray;
+
 }
 .testimony-header > div {
     background: #202A32;
     color: white;
     font-weight: bold;
 }
+
+.testimony-row > div {
+    min-height: 6rem;
+}
+
+#testimony-table-content{
+    overflow-y: scroll;
+    max-height:100%;
+    border: 1px solid lightgray;
+    border-right: none;
+    background-color: #fff;
+    margin-bottom: 3rem;
+    height: 12rem;
+
+}
+
 
 #byline {
     line-height: 1.3;
@@ -126,7 +134,7 @@ hr {
     font-weight: 400;
     font-size: .8rem;
     /* margin: auto; */
-    margin-bottom: 50px;
+    margin-bottom: 2rem;
 }
 
 p {
@@ -165,6 +173,7 @@ div.annotation {
     background: transparent;
     left: 0px;
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -243,8 +252,8 @@ a:link {
 @media only screen and (max-width: 992px) {
 
     .section-ctr{
-        margin-left: 4vw;
-        margin-right: 4vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
     }
 
     div.annotation > div.box {
@@ -270,6 +279,9 @@ a:link {
 
 } 
 
+#testimony-table-content {
+    /* font-size: 8pt; */
+}
 
 /*///////////////////////////////////////////////*/
 @media only screen and (max-width: 576px) {
@@ -288,7 +300,8 @@ a:link {
     div.annotation > div.box {
         /* position: absolute; */
         min-width: 80vw;
-        max-width: 85vw;
+        max-width: 80vw;
+        /* width: 100%; */
         margin: auto;
         /* margin-left: 2vw; */
         /* margin-right: 2vw; */
@@ -320,19 +333,31 @@ a:link {
         max-width: 90vw;
         /* width: 100%; */
 
-        min-height: 10vw;
+        height: 2.5rem;
 
         font-size: 7pt;
 
+    }
+
+    .testimony-header > div, .testimony-row > div {
+        /* width: 25%; */
+        padding: 0.2rem;
+    }
+
+    .testimony-row > div {
+        min-height: 20vw;
+        min-width: 5%;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
 
     #testimony-table-content {
         min-width: 90vw;
         max-width: 90vw;
 
-        min-height: 60vw;
+        min-height: 40vw;
 
-        font-size: 7pt;
+        font-size:7pt;
 
         margin-bottom: 0;
 

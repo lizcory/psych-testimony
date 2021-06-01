@@ -24,14 +24,13 @@ svg.attr("viewBox", `0 0 ${size.w} ${size.h}`)
 
 
 if (size.w < 1300) {
-
-    tr_size.w = size.w*.92;
+    tr_size.w = size.w*0.90;
     tr_size.h = size.h*1.5;
+}
 
-} else if (size.w < 546) {
-    tr_size.w = size.w;
-    tr_size.h = size.h*1.75;
-
+if (size.w < 546) {
+    tr_size.w = size.w*0.90
+    tr_size.h = size.h*1.8;
 }
 
 tree_svg
@@ -150,8 +149,8 @@ function responsivefy(svg) {
 
      // get width of container and resize svg to fit it
     function resize() {
-        svg.selectAll("text")
-        .style('font-size', "8pt");
+        // svg.selectAll("text")
+        // .style('font-size', "8pt");
 
         var targetWidth = parseInt(container.style("width"));
         svg.attr("width", targetWidth);
