@@ -63,11 +63,11 @@ if (size.w < 546) {
     .paddingInner(3) 
     (root)
 
-    var smallFont = "0.45rem";
-    var largeFont = "0.50rem";
-    var titleFont = "0.50rem";
-    var yLowerBuffer = 27;
-    var yTextBuffer = 2;
+    var smallFont = "0.50rem";
+    var largeFont = "0.60rem";
+    var titleFont = "0.65rem";
+    var yLowerBuffer = 30;
+    var yTextBuffer = 0;
 }
 
 
