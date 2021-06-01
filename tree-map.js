@@ -17,6 +17,7 @@ var titleFont = "13pt";
 var yLowerBuffer = 50;
 var yTextBuffer = 5;
 var yTitleBuffer = 21;
+var xTextBuffer = 5;
 var xTitleBuffer = 0;
 
 var root = d3.hierarchy(data).sum(function(d){ return d.value}) // Here the size of each leave is given in the 'value' field in input data
@@ -66,8 +67,9 @@ if (size.w < 546) {
     var smallFont = "0.50rem";
     var largeFont = "0.60rem";
     var titleFont = "0.65rem";
-    var yLowerBuffer = 30;
+    var yLowerBuffer = 29;
     var yTextBuffer = 0;
+    var xTextBuffer = 2;
 }
 
 
@@ -123,7 +125,7 @@ tree_svg
     .enter()
     .append("text")
         .classed('tree-text', true)
-        .attr("x", function(d){ return d.x0+5})    // + to adjust position (more right)
+        .attr("x", function(d){ return d.x0+xTextBuffer})    // + to adjust position (more right)
         .attr("y", function(d){ return d.y0+yTextBuffer})    // + to adjust position (lower)
         .text(function(d){ return d.data.name})
         .attr("font-size", smallFont)
@@ -137,7 +139,7 @@ tree_svg
     .enter()
     .append("text")
         .classed('tree-num', true)
-        .attr("x", function(d){ return d.x0+5})    // + to adjust position (more right)
+        .attr("x", function(d){ return d.x0+xTextBuffer})    // + to adjust position (more right)
         .attr("y", function(d){ return d.y0+yLowerBuffer})    // + to adjust position (lower)
         .text(function(d){ return d.data.value})
         .attr("font-size", "13pt")
