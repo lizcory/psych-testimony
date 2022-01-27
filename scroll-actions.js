@@ -35,7 +35,7 @@ function ScrollActions () {
             // getting id for each annotation
             let eleId = ele.getAttribute('id');
 
-            // adding triggers to each annotato);
+            // adding triggers to each annotation;
             // so we can update the bar-chart
             // as per a certain annotation
             // whether we scroll up (onEnter) or down (onLeave)
