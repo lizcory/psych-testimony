@@ -69,11 +69,11 @@ text{
 .testimony-table{
     align-content: center;
     margin: auto;
-    max-width: 93vw;    
+    max-width: 93vw;
 }
 
 .testimony-header {
-    height: 4rem;
+    height: 3.5rem;
     /* min-height: 2rem; */
     border: 1px solid lightgray;
     border-bottom: none;
@@ -114,6 +114,7 @@ text{
     background-color: #fff;
     margin-bottom: 3rem;
     height: 12rem;
+    font-family: Helvetica, sans-serif;
 
 }
 
@@ -194,6 +195,7 @@ div.annotation > div.box {
     padding: 15px;
     /* overflow: auto; */
     display: inline-block;
+    border-radius: 8px;
 
 }
 
@@ -209,13 +211,14 @@ div.box > div.text {
 
 div#tooltip-bars{
     display: none;
-    font-family: "Lora", sans-serif;
+    /* font-family: "Lora", sans-serif; */
+    font-family: Helvetica, sans-serif;
     font-size: 10pt;
     position: absolute;
     top: 0px;
     bottom: 0px;
     width: 140px;
-    height: 100px;
+    height: 80px;
     background: #fff;
     padding: 8px;
     border-radius: 8px;
@@ -265,7 +268,7 @@ a:link {
         min-width: 50vw;
         max-width: 55vw;
         margin: auto;
-        margin-left: 35vw;
+        /* margin-left: 35vw; */
         /* margin-left: 2vw; */
         /* margin-right: 2vw; */
         /* width: 300px; */
