@@ -73,9 +73,9 @@ text{
 }
 
 .testimony-header {
-    height: 3.5rem;
+    min-height: 2rem;
     /* min-height: 2rem; */
-    border: 1px solid lightgray;
+    border: 1px solid #cacaca;
     border-bottom: none;
     border-right: none;
     display: flex;
@@ -83,7 +83,7 @@ text{
 }
 
 .testimony-row {
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #cacaca;
     border-right: none;
     display: flex;
     flex-direction: row;
@@ -93,28 +93,31 @@ text{
     min-width: 5%;
     width: 25%;
     padding: 0.50rem;
-    border-right: 1px solid lightgray;
+    border-right: 1px solid #cacaca;
 
 }
 .testimony-header > div {
-    background: #202A32;
-    color: white;
+    background: #dadada;
+    color: #202A32;
     font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0px 2px 2px rgba(128,128,128, .15);
 }
 
 .testimony-row > div {
-    min-height: 6rem;
+    min-height: 2rem;
 }
 
 #testimony-table-content{
     overflow-y: scroll;
     max-height:100%;
-    border: 1px solid lightgray;
+    border: 1px solid #cacaca;
     border-right: none;
     background-color: #fff;
     margin-bottom: 3rem;
     height: 12rem;
     font-family: Helvetica, sans-serif;
+    font-size: 14px;
 
 }
 
@@ -145,6 +148,14 @@ p {
     max-width: 700px;
     margin: auto;
     padding-top: 1rem;
+}
+
+#end-caption{
+    margin: auto;
+    padding: 0;
+    max-width: 93vw;
+    font-size: 14px;
+    font-style: italic;
 }
 
 svg#bar-chart {
@@ -348,8 +359,11 @@ a:link {
         /* width: 100%; */
 
         height: 2.5rem;
+        font-size: 7pt;
 
-        font-size: 7.5pt;
+        div{
+            font-size: 10px
+        }
 
     }
 
@@ -370,8 +384,7 @@ a:link {
         max-width: 90vw;
 
         min-height: 40vw;
-
-        font-size:7.5pt;
+        font-size: 10px;
 
         margin-bottom: 0;
 
@@ -383,6 +396,10 @@ a:link {
 
     div.container {
         margin: 0;
+    }
+
+    #end-caption{
+        max-width: 90vw;
     }
 
     hr {
