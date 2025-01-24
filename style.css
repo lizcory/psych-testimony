@@ -66,6 +66,11 @@ text{
     font-weight: 800;
 }
 
+#search-bar{
+    /* max-width: 93vw;
+    margin-bottom: 0.5rem; */
+}
+
 .testimony-table{
     align-content: center;
     margin: auto;
@@ -73,13 +78,15 @@ text{
 }
 
 .testimony-header {
+    /* height: 3rem; */
     min-height: 2rem;
-    /* min-height: 2rem; */
     border: 1px solid #cacaca;
     border-bottom: none;
     border-right: none;
     display: flex;
     flex-direction: row;
+    /* padding-right: 1rem; */
+    /* display:table-header-group; */
 }
 
 .testimony-row {
@@ -109,7 +116,9 @@ text{
 }
 
 #testimony-table-content{
-    overflow-y: scroll;
+    overflow-y: auto;
+    /* scrollbar-gutter: stable both-edges; */
+
     max-height:100%;
     border: 1px solid #cacaca;
     border-right: none;
@@ -119,6 +128,14 @@ text{
     font-family: Helvetica, sans-serif;
     font-size: 14px;
 
+    /* -ms-overflow-style: none; */
+    scrollbar-width: none; 
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    ::-webkit-scrollbar {
+        display: none; 
+    }
+  
 }
 
 
